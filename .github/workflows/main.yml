@@ -27,6 +27,8 @@ jobs:
       - name: Install node
         run: |
           cd /home/runner/work/ECR/ECR/
+          ls 
+          pwd
           npm install
       - name: Run the node application
         run: node server.js
