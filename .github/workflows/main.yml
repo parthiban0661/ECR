@@ -10,7 +10,7 @@ on:
 
 jobs:
   clone-job:
-    name: clone
+    name: Installing dependencies
     runs-on: ubuntu-22.04
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -27,5 +27,9 @@ jobs:
       - name: Check Node version
         run: |
           node -v
+      - name: Run the node application
+        run: node server.js
+      - name: Check the running port
+        run: netstat -tulpn | grep 4000
       
         
