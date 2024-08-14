@@ -18,9 +18,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Run the node application
-        run: node server.js
-      - name: Check the running port
-        run: netstat -tulpn | grep 4000
       
         
