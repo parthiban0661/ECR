@@ -9,26 +9,15 @@ on:
       - main
 
 jobs:
-  clone-job:
-    name: Installing dependencies
+  build-job:
+    name: build
     runs-on: ubuntu-22.04
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-
-  build-job:
-    name: build
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Install node
-        run: |
-          cd /home/runner/work/ECR/ECR/
-          pwd
-          find / -name package.json
       - name: Run the node application
         run: node server.js
       - name: Check the running port
