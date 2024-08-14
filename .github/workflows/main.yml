@@ -29,7 +29,6 @@ jobs:
           cd /home/runner/work/ECR/ECR/
           ls 
           pwd
-          npm install
       - name: Run the node application
         run: node server.js
       - name: Check the running port
